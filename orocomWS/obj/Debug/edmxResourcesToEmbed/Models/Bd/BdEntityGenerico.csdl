@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RTGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="BdEntityGenerico" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Usuario" EntityType="RTGModel.Usuario" />
+    <EntitySet Name="AsistenciaDiariaMarcas" EntityType="RTGModel.AsistenciaDiariaMarcas" />
+  </EntityContainer>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Usuario1" />
+    </Key>
+    <Property Name="Usuario1" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="UsuarioPerfil" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Clave" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+    <Property Name="ExpirarPasswordFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="FechaExpiracion" Type="DateTime" Precision="3" />
+    <Property Name="UltimoLogin" Type="DateTime" Precision="3" />
+    <Property Name="NumeroLoginsDisponible" Type="Int32" />
+    <Property Name="NumeroLoginsUsados" Type="Int32" />
+    <Property Name="UsuarioRed" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="SQLLogin" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="SQLPassword" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="UltimoUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+    <Property Name="UltimaFechaModif" Type="DateTime" Precision="3" />
+    <Property Name="Persona" Type="Int32" />
+    <Property Name="LoginPersonaFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="PersonaNumero" Type="Int32" />
+    <Property Name="FlagCambioClave" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="AsistenciaDiariaMarcas">
+    <Key>
+      <PropertyRef Name="Empleado" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="Empleado" Type="Int32" Nullable="false" />
+    <Property Name="Secuencia" Type="Int32" Nullable="false" />
+    <Property Name="FechaMarcacion" Type="DateTime" Precision="3" />
+    <Property Name="TipoMarcacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+    <Property Name="LugarMarcacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="Latitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Longitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="Estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="IpCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+  </EntityType>
+</Schema>

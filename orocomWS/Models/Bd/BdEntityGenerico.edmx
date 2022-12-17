@@ -1,0 +1,173 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="RTGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="AsistenciaDiariaMarcas">
+          <Key>
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Secuencia" />
+          </Key>
+          <Property Name="Empleado" Type="int" Nullable="false" />
+          <Property Name="Secuencia" Type="int" Nullable="false" />
+          <Property Name="FechaMarcacion" Type="datetime" />
+          <Property Name="TipoMarcacion" Type="varchar" MaxLength="5" />
+          <Property Name="LugarMarcacion" Type="varchar" MaxLength="100" />
+          <Property Name="Latitud" Type="varchar" MaxLength="200" />
+          <Property Name="Longitud" Type="varchar" MaxLength="200" />
+          <Property Name="Estado" Type="varchar" MaxLength="2" />
+          <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+          <Property Name="IpCreacion" Type="varchar" MaxLength="20" />
+          <Property Name="FechaCreacion" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Usuario" />
+          </Key>
+          <Property Name="Usuario" Type="char" MaxLength="20" Nullable="false" />
+          <Property Name="UsuarioPerfil" Type="char" MaxLength="2" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+          <Property Name="Clave" Type="char" MaxLength="100" />
+          <Property Name="ExpirarPasswordFlag" Type="char" MaxLength="1" />
+          <Property Name="FechaExpiracion" Type="datetime" />
+          <Property Name="UltimoLogin" Type="datetime" />
+          <Property Name="NumeroLoginsDisponible" Type="int" />
+          <Property Name="NumeroLoginsUsados" Type="int" />
+          <Property Name="UsuarioRed" Type="varchar" MaxLength="25" />
+          <Property Name="SQLLogin" Type="char" MaxLength="20" />
+          <Property Name="SQLPassword" Type="char" MaxLength="10" />
+          <Property Name="Estado" Type="char" MaxLength="1" />
+          <Property Name="UltimoUsuario" Type="varchar" MaxLength="25" />
+          <Property Name="UltimaFechaModif" Type="datetime" />
+          <Property Name="Persona" Type="int" />
+          <Property Name="LoginPersonaFlag" Type="char" MaxLength="1" />
+          <Property Name="PersonaNumero" Type="int" />
+          <Property Name="FlagCambioClave" Type="varchar" MaxLength="1" />
+        </EntityType>
+        <EntityContainer Name="RTGModelStoreContainer">
+          <EntitySet Name="AsistenciaDiariaMarcas" EntityType="Self.AsistenciaDiariaMarcas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="RTGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BdEntityGenerico" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Usuario" EntityType="RTGModel.Usuario" />
+          <EntitySet Name="AsistenciaDiariaMarcas" EntityType="RTGModel.AsistenciaDiariaMarcas" />
+        </EntityContainer>
+        <EntityType Name="Usuario">
+          <Key>
+            <PropertyRef Name="Usuario1" />
+          </Key>
+          <Property Name="Usuario1" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="UsuarioPerfil" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Clave" Type="String" MaxLength="100" FixedLength="true" Unicode="false" />
+          <Property Name="ExpirarPasswordFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="FechaExpiracion" Type="DateTime" Precision="3" />
+          <Property Name="UltimoLogin" Type="DateTime" Precision="3" />
+          <Property Name="NumeroLoginsDisponible" Type="Int32" />
+          <Property Name="NumeroLoginsUsados" Type="Int32" />
+          <Property Name="UsuarioRed" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="SQLLogin" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="SQLPassword" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="UltimoUsuario" Type="String" MaxLength="25" FixedLength="false" Unicode="false" />
+          <Property Name="UltimaFechaModif" Type="DateTime" Precision="3" />
+          <Property Name="Persona" Type="Int32" />
+          <Property Name="LoginPersonaFlag" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="PersonaNumero" Type="Int32" />
+          <Property Name="FlagCambioClave" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="AsistenciaDiariaMarcas">
+          <Key>
+            <PropertyRef Name="Empleado" />
+            <PropertyRef Name="Secuencia" />
+          </Key>
+          <Property Name="Empleado" Type="Int32" Nullable="false" />
+          <Property Name="Secuencia" Type="Int32" Nullable="false" />
+          <Property Name="FechaMarcacion" Type="DateTime" Precision="3" />
+          <Property Name="TipoMarcacion" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="LugarMarcacion" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Latitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Longitud" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="Estado" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="IpCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="RTGModelStoreContainer" CdmEntityContainer="BdEntityGenerico">
+          <EntitySetMapping Name="Usuario">
+            <EntityTypeMapping TypeName="RTGModel.Usuario">
+              <MappingFragment StoreEntitySet="Usuario">
+                <ScalarProperty Name="FlagCambioClave" ColumnName="FlagCambioClave" />
+                <ScalarProperty Name="PersonaNumero" ColumnName="PersonaNumero" />
+                <ScalarProperty Name="LoginPersonaFlag" ColumnName="LoginPersonaFlag" />
+                <ScalarProperty Name="Persona" ColumnName="Persona" />
+                <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+                <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="SQLPassword" ColumnName="SQLPassword" />
+                <ScalarProperty Name="SQLLogin" ColumnName="SQLLogin" />
+                <ScalarProperty Name="UsuarioRed" ColumnName="UsuarioRed" />
+                <ScalarProperty Name="NumeroLoginsUsados" ColumnName="NumeroLoginsUsados" />
+                <ScalarProperty Name="NumeroLoginsDisponible" ColumnName="NumeroLoginsDisponible" />
+                <ScalarProperty Name="UltimoLogin" ColumnName="UltimoLogin" />
+                <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+                <ScalarProperty Name="ExpirarPasswordFlag" ColumnName="ExpirarPasswordFlag" />
+                <ScalarProperty Name="Clave" ColumnName="Clave" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="UsuarioPerfil" ColumnName="UsuarioPerfil" />
+                <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="AsistenciaDiariaMarcas">
+            <EntityTypeMapping TypeName="RTGModel.AsistenciaDiariaMarcas">
+              <MappingFragment StoreEntitySet="AsistenciaDiariaMarcas">
+                <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+                <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+                <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+                <ScalarProperty Name="Estado" ColumnName="Estado" />
+                <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+                <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+                <ScalarProperty Name="LugarMarcacion" ColumnName="LugarMarcacion" />
+                <ScalarProperty Name="TipoMarcacion" ColumnName="TipoMarcacion" />
+                <ScalarProperty Name="FechaMarcacion" ColumnName="FechaMarcacion" />
+                <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="RTGModelStoreContainer" CdmEntityContainer="BdEntityGenerico">
+    <EntitySetMapping Name="Usuario">
+      <EntityTypeMapping TypeName="RTGModel.Usuario">
+        <MappingFragment StoreEntitySet="Usuario">
+          <ScalarProperty Name="FlagCambioClave" ColumnName="FlagCambioClave" />
+          <ScalarProperty Name="PersonaNumero" ColumnName="PersonaNumero" />
+          <ScalarProperty Name="LoginPersonaFlag" ColumnName="LoginPersonaFlag" />
+          <ScalarProperty Name="Persona" ColumnName="Persona" />
+          <ScalarProperty Name="UltimaFechaModif" ColumnName="UltimaFechaModif" />
+          <ScalarProperty Name="UltimoUsuario" ColumnName="UltimoUsuario" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="SQLPassword" ColumnName="SQLPassword" />
+          <ScalarProperty Name="SQLLogin" ColumnName="SQLLogin" />
+          <ScalarProperty Name="UsuarioRed" ColumnName="UsuarioRed" />
+          <ScalarProperty Name="NumeroLoginsUsados" ColumnName="NumeroLoginsUsados" />
+          <ScalarProperty Name="NumeroLoginsDisponible" ColumnName="NumeroLoginsDisponible" />
+          <ScalarProperty Name="UltimoLogin" ColumnName="UltimoLogin" />
+          <ScalarProperty Name="FechaExpiracion" ColumnName="FechaExpiracion" />
+          <ScalarProperty Name="ExpirarPasswordFlag" ColumnName="ExpirarPasswordFlag" />
+          <ScalarProperty Name="Clave" ColumnName="Clave" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="UsuarioPerfil" ColumnName="UsuarioPerfil" />
+          <ScalarProperty Name="Usuario1" ColumnName="Usuario" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="AsistenciaDiariaMarcas">
+      <EntityTypeMapping TypeName="RTGModel.AsistenciaDiariaMarcas">
+        <MappingFragment StoreEntitySet="AsistenciaDiariaMarcas">
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+          <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
+          <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Longitud" ColumnName="Longitud" />
+          <ScalarProperty Name="Latitud" ColumnName="Latitud" />
+          <ScalarProperty Name="LugarMarcacion" ColumnName="LugarMarcacion" />
+          <ScalarProperty Name="TipoMarcacion" ColumnName="TipoMarcacion" />
+          <ScalarProperty Name="FechaMarcacion" ColumnName="FechaMarcacion" />
+          <ScalarProperty Name="Secuencia" ColumnName="Secuencia" />
+          <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

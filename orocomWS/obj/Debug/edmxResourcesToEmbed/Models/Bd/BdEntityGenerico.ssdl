@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="RTGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AsistenciaDiariaMarcas">
+    <Key>
+      <PropertyRef Name="Empleado" />
+      <PropertyRef Name="Secuencia" />
+    </Key>
+    <Property Name="Empleado" Type="int" Nullable="false" />
+    <Property Name="Secuencia" Type="int" Nullable="false" />
+    <Property Name="FechaMarcacion" Type="datetime" />
+    <Property Name="TipoMarcacion" Type="varchar" MaxLength="5" />
+    <Property Name="LugarMarcacion" Type="varchar" MaxLength="100" />
+    <Property Name="Latitud" Type="varchar" MaxLength="200" />
+    <Property Name="Longitud" Type="varchar" MaxLength="200" />
+    <Property Name="Estado" Type="varchar" MaxLength="2" />
+    <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="IpCreacion" Type="varchar" MaxLength="20" />
+    <Property Name="FechaCreacion" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Usuario">
+    <Key>
+      <PropertyRef Name="Usuario" />
+    </Key>
+    <Property Name="Usuario" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="UsuarioPerfil" Type="char" MaxLength="2" />
+    <Property Name="Nombre" Type="varchar" MaxLength="50" />
+    <Property Name="Clave" Type="char" MaxLength="100" />
+    <Property Name="ExpirarPasswordFlag" Type="char" MaxLength="1" />
+    <Property Name="FechaExpiracion" Type="datetime" />
+    <Property Name="UltimoLogin" Type="datetime" />
+    <Property Name="NumeroLoginsDisponible" Type="int" />
+    <Property Name="NumeroLoginsUsados" Type="int" />
+    <Property Name="UsuarioRed" Type="varchar" MaxLength="25" />
+    <Property Name="SQLLogin" Type="char" MaxLength="20" />
+    <Property Name="SQLPassword" Type="char" MaxLength="10" />
+    <Property Name="Estado" Type="char" MaxLength="1" />
+    <Property Name="UltimoUsuario" Type="varchar" MaxLength="25" />
+    <Property Name="UltimaFechaModif" Type="datetime" />
+    <Property Name="Persona" Type="int" />
+    <Property Name="LoginPersonaFlag" Type="char" MaxLength="1" />
+    <Property Name="PersonaNumero" Type="int" />
+    <Property Name="FlagCambioClave" Type="varchar" MaxLength="1" />
+  </EntityType>
+  <EntityContainer Name="RTGModelStoreContainer">
+    <EntitySet Name="AsistenciaDiariaMarcas" EntityType="Self.AsistenciaDiariaMarcas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
