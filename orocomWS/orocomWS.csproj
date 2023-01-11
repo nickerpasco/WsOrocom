@@ -191,6 +191,7 @@
     <Compile Include="Models\Bd\Usuario.cs">
       <DependentUpon>BdEntityGenerico.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\ModelAsistencia.cs" />
     <Compile Include="Models\ModelUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorio\RepositorioUsuario.cs" />

@@ -21,7 +21,28 @@ namespace orocomWS.Controllers
 {
     public class RepositorioUsuario
     {
+        public List<ModelAsistencia> ListarAsistencias(ModelUsuario bean)
+        {
+            List<ModelAsistencia> response = new List<ModelAsistencia>();
 
+
+
+            UsuarioDao dao = new UsuarioDao();
+
+            var sqlString = UtilsGlobal.ConvertLinesSqlXml("Query_Usuario", "Usuario.getListarAsistencias");
+
+            List<SqlParameter> parametrosUserPass = new List<SqlParameter>();
+            parametrosUserPass.Add(new SqlParameter("@Persona", bean.Persona));
+            //parametrosUserPass.Add(new SqlParameter("@FechaInicio", bean.FechaInicio)); 
+            //parametrosUserPass.Add(new SqlParameter("@FechaFin", bean.FechaFin)); 
+
+            response = UtilsDAO.getDataByQueryWithParameters<ModelAsistencia>(sqlString, parametrosUserPass);
+
+
+
+            return response;
+
+        }
         public ModelUsuario GetAllByID(ModelUsuario bean)
         {
             ModelUsuario response = new ModelUsuario();

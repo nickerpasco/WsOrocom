@@ -22,6 +22,16 @@ namespace orocomWS.Controllers
         }
 
         [HttpPost]
+        [Route("api/Usuario/ListarAsistencias")]
+        public List<ModelAsistencia> ListarAsistencias([FromBody] ModelUsuario bean)
+        {
+            RepositorioUsuario usuario = new RepositorioUsuario();
+            var resultlist = usuario.ListarAsistencias(bean);
+            return resultlist;
+
+        }
+
+        [HttpPost]
         [Route("api/Usuario/SaveAsistencia")]
         public AsistenciaDiariaMarcas SaveAsistencia([FromBody] AsistenciaDiariaMarcas SaveAsistencia)
         {
