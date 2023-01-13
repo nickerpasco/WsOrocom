@@ -9,6 +9,7 @@ namespace orocomWS.Models
 	public class ModelAsistencia
 	{
 		public string nombrecompleto { get; set; }
+		public string FechaMarcacionString { get; set; }
 		public string companiasocio { get; set; }
 		public string sucursal { get; set; }
 		public string estado { get; set; }

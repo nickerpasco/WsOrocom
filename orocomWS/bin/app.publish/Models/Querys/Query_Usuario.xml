@@ -40,6 +40,30 @@
 </Usuario.GetAllParameters>
 
 
+ <Usuario.getListarAsistencias>
+
+	 SELECT  
+	 convert(varchar(20),A.FechaMarcacion,103)  +' '+convert(varchar(20),A.FechaMarcacion,108) as FechaMarcacionString,
+	 C.Nombrecompleto "nombrecompleto",
+	 B.CompaniaSocio "companiasocio",
+	 B.Sucursal "sucursal",
+	 D.Estado "estado",
+	 D.CodigoCarnet "codigocarnet",
+	 E.Nombre "area_desc",
+	 A.*
+	 FROM AsistenciaDiariaMarcas A
+	 INNER JOIN  EmpleadoMast B ON B.Empleado=A.EMPLEADO
+	 INNER JOIN PersonaMast  C ON B.Empleado=C.Persona
+	 INNER JOIN AS_CarnetIdentificacion   D	ON C.Persona = D.Empleado
+	 LEFT JOIN AS_Area  E					ON D.area = E.area
+	 WHERE 	D.Estado = 'A'
+	 AND  A.Empleado=@Persona
+	 --AND  A.FechaMarcacion  AGREGA FILTRO RANGO FECHAS INICIO Y FIN
+	 order by C.NombreCompleto
+
+ </Usuario.getListarAsistencias>
+
+
 	<Usuario.getMontoDashBorad>
 
 
