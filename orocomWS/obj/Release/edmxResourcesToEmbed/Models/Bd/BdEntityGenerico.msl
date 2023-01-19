@@ -29,6 +29,7 @@
     <EntitySetMapping Name="AsistenciaDiariaMarcas">
       <EntityTypeMapping TypeName="RTGModel.AsistenciaDiariaMarcas">
         <MappingFragment StoreEntitySet="AsistenciaDiariaMarcas">
+          <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
           <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
           <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
           <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />

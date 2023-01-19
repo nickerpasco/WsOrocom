@@ -16,6 +16,7 @@
     <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
     <Property Name="IpCreacion" Type="varchar" MaxLength="20" />
     <Property Name="FechaCreacion" Type="datetime" />
+    <Property Name="Comentarios" Type="varchar" MaxLength="255" />
   </EntityType>
   <EntityType Name="Usuario">
     <Key>

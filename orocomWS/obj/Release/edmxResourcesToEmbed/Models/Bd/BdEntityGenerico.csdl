@@ -44,5 +44,6 @@
     <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="IpCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+    <Property Name="Comentarios" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

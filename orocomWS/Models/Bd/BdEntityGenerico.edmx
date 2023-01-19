@@ -21,6 +21,7 @@
           <Property Name="UsuarioCreacion" Type="varchar" MaxLength="20" />
           <Property Name="IpCreacion" Type="varchar" MaxLength="20" />
           <Property Name="FechaCreacion" Type="datetime" />
+          <Property Name="Comentarios" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="Usuario">
           <Key>
@@ -98,6 +99,7 @@
           <Property Name="UsuarioCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="IpCreacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="FechaCreacion" Type="DateTime" Precision="3" />
+          <Property Name="Comentarios" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -133,6 +135,7 @@
           <EntitySetMapping Name="AsistenciaDiariaMarcas">
             <EntityTypeMapping TypeName="RTGModel.AsistenciaDiariaMarcas">
               <MappingFragment StoreEntitySet="AsistenciaDiariaMarcas">
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
                 <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
                 <ScalarProperty Name="IpCreacion" ColumnName="IpCreacion" />
                 <ScalarProperty Name="UsuarioCreacion" ColumnName="UsuarioCreacion" />

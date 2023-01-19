@@ -59,7 +59,7 @@
 	 WHERE 	D.Estado = 'A'
 	 AND  A.Empleado=@Persona
 	 --AND  A.FechaMarcacion  AGREGA FILTRO RANGO FECHAS INICIO Y FIN
-	 order by C.NombreCompleto
+	 order by A.FechaMarcacion desc
 
  </Usuario.getListarAsistencias>
 

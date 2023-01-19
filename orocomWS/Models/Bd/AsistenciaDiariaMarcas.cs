@@ -25,5 +25,6 @@ namespace orocomWS.Models.Bd
         public string UsuarioCreacion { get; set; }
         public string IpCreacion { get; set; }
         public Nullable<System.DateTime> FechaCreacion { get; set; }
+        public string Comentarios { get; set; }
     }
 }
